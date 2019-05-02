@@ -1,4 +1,4 @@
-package Device;
+package server;
 
 public class Device {
 	//this is the device driver
@@ -6,11 +6,18 @@ public class Device {
 	private String name,ID;
 	private String location;
 	private boolean lost;
+	
+	//default constructor
+	public Device() {
+		this.name = "";
+		this.ID = "";
+		this.lost = false;
+	}
 	public Device(String name, String ID,String location) {
 		this.name = name;
 		this.ID = ID;
 		this.location = location;
-		this.lost = false;
+		//this.lost = false;
 	}
 	
 	
