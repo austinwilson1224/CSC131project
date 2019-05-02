@@ -17,7 +17,7 @@ public class User {
 		this.id = id; 
 	}
 	
-	//setters 
+	//setters djh
 	public void setFirstName(String Fname) {
 		this.Fname = Fname;
 	}
