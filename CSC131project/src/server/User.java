@@ -8,16 +8,24 @@ package server;
  *
  */
 public class User {
-	private String name;
+	private String Fname;
+	private String Lname; 
 	private int id;
 	public User(String name,int id) {
-		this.name = name;
+		this.Fname = Fname;
+		this.Lname = Lname; 
+		this.id = id; 
 	}
 	
 	//setters 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String Fname) {
+		this.Fname = Fname;
 	}
+	public void setLastName(String Lname)
+	{
+		this.Lname = Lname; 
+	}
+	
 	public void setId(int Id) {
 		this.id = Id;
 	}
