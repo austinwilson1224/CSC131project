@@ -27,8 +27,11 @@ public class Device {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public void setLost(boolean lost) {
-		this.lost = lost;
+	public void setLost() {
+		this.lost = true;
+	}
+	public void setFound() {
+		this.lost = false;
 	}
 	
 	
