@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
 	public static void main(String[] args)
 	{
-		Verify();  //yo mama
+		Verify(); //yo mama
 		
 	}
 	public static void Verify()
