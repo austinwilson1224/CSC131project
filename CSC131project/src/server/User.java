@@ -8,16 +8,16 @@ package server;
  *
  */
 public class User {
-	private String Fname;
-	private String Lname; 
-	private int id;
-	public User(String name,int id) {
+	private static String Fname;
+	private static String Lname; 
+	private static int id;
+	public User(String Fname,String Lname, int id) {
 		this.Fname = Fname;
 		this.Lname = Lname; 
 		this.id = id; 
 	}
 	
-	//setters djh
+	
 	public void setFirstName(String Fname) {
 		this.Fname = Fname;
 	}
@@ -31,15 +31,20 @@ public class User {
 	}
 	
 	//getters
-	public String getName() {
-		return this.name;
+	public static String getFirstName() {
+		return Fname;
 	}
-	public int getId() {
-		return this.id;
+	public static String getLastName() {
+		return Lname;
+	}
+	public static int getId() {
+		return id;
 	}
 	public String getInformation()
 	{
-		return this.name;
+		return this.Fname;
+		//return this.Lname;
+		//return this.id; 
 	}
 }
 
