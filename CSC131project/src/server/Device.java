@@ -1,5 +1,8 @@
 package server;
 
+//Jorge, jorge, jorge of el jungle
+
+
 public class Device {
 	//this is the device driver
 	//most devices should have a name and an ID
