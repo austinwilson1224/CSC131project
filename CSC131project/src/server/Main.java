@@ -3,11 +3,13 @@ import java.util.*;
 
 public class Main {
 	
+	private static Scanner scan;
 	public static void main(String[] args)
 	{
 		
 		Create();
 		Present();
+		System.out.println("Have you lost your device? \n Reply with \"Yes\" or \"No\" ");
 		//Test
 	}
 	public static void Present()
@@ -19,22 +21,18 @@ public class Main {
 	}
 	public static void Verify()
 	{
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Please enter First name: ");
-		String Fname = scan.next();
-		System.out.println();
-		System.out.print("Please enter Last name: ");
-		String Lname = scan.next();
-		System.out.println();
+		scan = new Scanner(System.in);
 		System.out.print("Please enter Device ID: ");
 		String ID = scan.next();
+		
+		
 		System.out.println();
 	}
 	public static User Create()
 	{
 		System.out.println(" CREATE USER");
 		System.out.println("******************");
-		Scanner scan = new Scanner(System.in);
+		scan = new Scanner(System.in);
 		System.out.print("Please enter First name: ");
 		String Fname = scan.next();
 		System.out.println();
