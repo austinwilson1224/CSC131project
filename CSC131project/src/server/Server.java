@@ -13,24 +13,29 @@ public class Server {
 	
 	
 	
-	//private User user;
+	private User user;
 	//private Device device;
 	private int serverID;
 	
 	
 	/**
-	 * public void listener(){
-	 * 		if(user notifies that the device has been lost){
-	 * 
-	 * 			update device status
-	 * 
-	 * 			also when the device is found then update to not lost....
-	 * 		}
-	 * 
-	 * 
-	 * }
-	 * @param serverID
+	 *user notifies that the device has been lost){
+	  update device status
+	  also when the device is found then update to not lost....
 	 */
+	
+	  public void listener(){
+	  		if(user.getDevice().isLost()) {
+	  			
+	  			//finish later
+	  			//return user.getDevice().getLocation();
+	  		}
+	  				
+
+	  
+	  
+	  }
+
 	
 	
 	
