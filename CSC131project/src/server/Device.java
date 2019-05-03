@@ -57,4 +57,7 @@ public class Device {
 	public String getLocation() {
 		return this.location;
 	}
+	public boolean isLost() {
+		return this.lost;
+	}
 }
