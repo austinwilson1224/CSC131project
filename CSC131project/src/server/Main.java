@@ -4,13 +4,25 @@ import java.util.*;
 public class Main {
 	
 	private static Scanner scan;
+	static String answer; 
+	static String anotherDevice; 
 	public static void main(String[] args)
 	{
 		
 		Create();
 		Present();
-		System.out.println("Have you lost your device? \n Reply with \"Yes\" or \"No\" ");
+		
+		
 		//Test
+	}
+	public static void isLost()
+	{
+		System.out.println("Have you lost your device? \n Reply with \"Yes\" or \"No\" ");
+		answer = scan.next();
+		if(answer.equalsIgnoreCase("Yes"))
+		{
+			
+		}
 	}
 	public static void Present()
 	{
@@ -24,6 +36,15 @@ public class Main {
 		scan = new Scanner(System.in);
 		System.out.print("Please enter Device ID: ");
 		String ID = scan.next();
+		while(User.getId() != ID)
+		{
+			System.out.print("ID not found. Please try again \n Please enter Device ID: ");
+			ID = scan.next(); 
+		}
+		if(User.getId() == ID)
+		{
+			System.out.println("Searching ... ");
+		}
 		
 		
 		System.out.println();
@@ -40,9 +61,20 @@ public class Main {
 		String Lname = scan.next();
 		System.out.println();
 		System.out.print("Please enter Device ID: ");
-		int ID = scan.nextInt();
+		String ID = scan.next();
+		User.setId(ID);
 		System.out.println();
-		User user = new User(Fname,Lname, ID); 
+		do
+		{
+			System.out.print("Would you like to add another device? (Yes/No)");
+			anotherDevice = scan.next(); 
+			if(anotherDevice.equalsIgnoreCase("Yes"))
+	
+				System.out.print("Please enter Device ID: ");
+				ID = scan.next();
+				User.setId(ID);
+		}while (anotherDevice.equalsIgnoreCase("Yes"));
+		User user = new User(Fname,Lname); 
 		return user; 
 		
 	}
