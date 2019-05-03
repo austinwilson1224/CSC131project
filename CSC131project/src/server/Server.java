@@ -1,20 +1,43 @@
 package server;
 
 public class Server {
+	/**
+	 * this is where we need to code the listener method
+	 * 
+	 * there will be an instance of an object of maybe a user
+	 * when the person loses their device they need to notify the server
+	 * that the device is gone
+	 * the listener will listen for when this call goes out and will update 
+	 * the device status to show that it has been lost
+	 */
+	
+	
+	
+	//private User user;
+	//private Device device;
 	private int serverID;
+	
+	
+	/**
+	 * public void listener(){
+	 * 		if(user notifies that the device has been lost){
+	 * 
+	 * 			update device status
+	 * 
+	 * 			also when the device is found then update to not lost....
+	 * 		}
+	 * 
+	 * 
+	 * }
+	 * @param serverID
+	 */
+	
+	
 	
 	public Server(int serverID) {
 		this.serverID = serverID;
 	}
 	
-
-	
-	public static void main(String[] args) {
-		Device Austin = new Device("Austin","1","Sacramento");
-		Austin.setLost();
-		System.out.println("You device is in " + Austin.getLocation());
-	}
-
 	
 	
 	public void setID(int id) {
