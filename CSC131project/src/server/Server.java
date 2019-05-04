@@ -13,7 +13,7 @@ public class Server {
 	
 	
 	
-	private User user;
+	//private User user;
 	//private Device device;
 	private int serverID;
 	
@@ -25,11 +25,12 @@ public class Server {
 	 */
 	
 	  public void listener(){
-	  		if(user.getDevice().isLost()) {
+		  
+	  	//	if(user.getDevice().isLost()) {
 	  			
 	  			//finish later
 	  			//return user.getDevice().getLocation();
-	  		}
+	  		//}
 	  				
 
 	  

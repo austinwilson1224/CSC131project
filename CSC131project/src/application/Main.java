@@ -1,5 +1,7 @@
-package server;
-import java.util.*;
+package application;
+import java.util.Scanner;
+
+import user.User;
 
 public class Main {
 	
@@ -27,25 +29,25 @@ public class Main {
 	public static void Present()
 	{
 		System.out.println("*************************");
-		System.out.print("User: " +User.getFirstName()+ " "+User.getLastName()+"\n");
-		System.out.println("Saved Device ID: " +User.getId());
+		//System.out.print("User: " +User.getFirstName()+ " "+User.getLastName()+"\n");
+		//System.out.println("Saved Device ID: " +User.getId());
 		System.out.println("*************************");
 	}
 	public static void Verify()
 	{
 		scan = new Scanner(System.in);
 		System.out.print("Please enter Device ID: ");
-		String ID = scan.next();
-		while(User.getId() != ID)
-		{
-			System.out.print("ID not found. Please try again \n Please enter Device ID: ");
-			ID = scan.next(); 
-		}
-		if(User.getId() == ID)
-		{
-			System.out.println("Searching ... ");
-		}
-		
+		//String ID = scan.next();
+//		while(User.getId() != ID)
+//		{
+//			System.out.print("ID not found. Please try again \n Please enter Device ID: ");
+//			ID = scan.next(); 
+//		}
+//		if(User.getId() == ID)
+//		{
+//			System.out.println("Searching ... ");
+//		}
+//		
 		
 		System.out.println();
 	}
@@ -61,8 +63,8 @@ public class Main {
 		String Lname = scan.next();
 		System.out.println();
 		System.out.print("Please enter Device ID: ");
-		String ID = scan.next();
-		User.setId(ID);
+		//String ID = scan.next();
+		//User.setId(ID);
 		System.out.println();
 		do
 		{
@@ -71,8 +73,8 @@ public class Main {
 			if(anotherDevice.equalsIgnoreCase("Yes"))
 	
 				System.out.print("Please enter Device ID: ");
-				ID = scan.next();
-				User.setId(ID);
+				//ID = scan.next();
+			//	User.setId(ID);
 		}while (anotherDevice.equalsIgnoreCase("Yes"));
 		User user = new User(Fname,Lname); 
 		return user; 

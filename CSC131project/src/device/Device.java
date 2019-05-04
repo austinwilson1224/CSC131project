@@ -1,21 +1,21 @@
-package server;
+package device;
 
 public class Device {
 	//this is the device driver
-	//most devices should have a name and an ID
-	private String name,ID;
+	//most devices should have a name and an id
+	private String name,id;
 	private String location;
 	private boolean lost;
 	
 	//default constructor
 	public Device() {
 		this.name = "";
-		this.ID = "";
+		this.id = "";
 		this.lost = false;
 	}
-	public Device(String name, String ID,String location) {
+	public Device(String name, String id,String location) {
 		this.name = name;
-		this.ID = ID;
+		this.id = id;
 		this.location = location;
 		//this.lost = false;
 	}
@@ -28,8 +28,8 @@ public class Device {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setid(String id) {
+		this.id = id;
 	}
 	public void setLocation(String location) {
 		this.location = location;
@@ -51,8 +51,8 @@ public class Device {
 	public String getName() {
 		return this.name;
 	}
-	public String getID() {
-		return this.name;
+	public String getid() {
+		return this.id;
 	}
 	public String getLocation() {
 		return this.location;
