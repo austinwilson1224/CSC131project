@@ -8,7 +8,9 @@ public class Main {
 	private static Scanner scan;
 	static String answer; 
 	static String anotherDevice; 
-	public static void main(String[] args)
+	
+	
+	public static void main(String... args)
 	{
 		
 		Create();

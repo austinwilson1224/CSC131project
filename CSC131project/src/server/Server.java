@@ -1,6 +1,7 @@
 package server;
 
 public class Server {
+	
 	/**
 	 * this is where we need to code the listener method
 	 * 
@@ -31,10 +32,6 @@ public class Server {
 	  			//finish later
 	  			//return user.getDevice().getLocation();
 	  		//}
-	  				
-
-	  
-	  
 	  }
 
 	

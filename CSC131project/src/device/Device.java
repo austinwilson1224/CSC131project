@@ -13,6 +13,8 @@ public class Device {
 		this.id = "";
 		this.lost = false;
 	}
+	
+	// param constructor
 	public Device(String name, String id,String location) {
 		this.name = name;
 		this.id = id;
