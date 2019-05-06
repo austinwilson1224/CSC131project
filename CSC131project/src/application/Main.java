@@ -4,7 +4,7 @@ import java.util.Scanner;
 import user.User;
 
 public class Main {
-	
+	//test
 	private static Scanner scan = new Scanner(System.in);
 	static String answer; 
 	static String anotherDevice; 
