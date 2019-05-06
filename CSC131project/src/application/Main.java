@@ -5,6 +5,7 @@ import user.User;
 
 public class Main {
 	//test
+	//test2
 	private static Scanner scan = new Scanner(System.in);
 	static String answer; 
 	static String anotherDevice; 
