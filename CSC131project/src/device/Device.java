@@ -2,8 +2,8 @@ package device;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import notification.Notification;
+import java.lang.*;
 
 public class Device {
 	//this is the device driver
@@ -12,6 +12,8 @@ public class Device {
 	private String location;
 	private boolean lost;
 	private List<Notification> notifications = new ArrayList<>();
+	//this is a list to store the id numbers of all devices in existence 
+	private ArrayList<Integer> existingIds = new ArrayList<Integer>();
 	
 	//default constructor
 	public Device() {

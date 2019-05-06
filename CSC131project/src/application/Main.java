@@ -1,6 +1,7 @@
 package application;
 import java.util.Scanner;
 
+import device.Device;
 import user.User;
 
 public class Main {
@@ -23,9 +24,16 @@ public class Main {
 	    	createUser();
 	    	break;
 	    case 2:
-	    	addDevice();
+	    	Device device = new Device();
+	    	System.out.print("What is your name?");
+	    	String name = scan.next();
+	    	//get id
+	    	
+	    	//get location
+	    	//addDevice();
 	    	break;
 	    case 3:
+	    	//return device 
 	    	lostDevice();
 	    	break;
 	    case 4: 
