@@ -5,20 +5,44 @@ import user.User;
 
 public class Main {
 	
-	private static Scanner scan;
+	private static Scanner scan = new Scanner(System.in);
 	static String answer; 
 	static String anotherDevice; 
 	
 	
 	public static void main(String... args)
 	{
-		
-		Create();
-		Present();
-		
-		
-		//Test
+		int choice;
+		do {
+		System.out.println("1. Create User\t2.Add Device\t3.Lost Device\t4.Found Device\t5.Block Device\t0.Exit");
+		System.out.print("Enter your choice\t");
+		choice = scan.nextInt();
+	    switch(choice) {
+	    case 1:
+	    	createUser();
+	    	break;
+	    case 2:
+	    	addDevice();
+	    	break;
+	    case 3:
+	    	lostDevice();
+	    	break;
+	    case 4: 
+	    	foundDevice();
+	    	break;
+	    case 5:
+	    	blockDevice();
+	    	break;
+	    case 0:
+	    	break;
+	    default:
+	    	System.out.println("Wrong option. Try again");
+	    }
+		}
+		while(choice!=0);
+		System.out.println("Exiting application.");
 	}
+	
 	public static void isLost()
 	{
 		System.out.println("Have you lost your device? \n Reply with \"Yes\" or \"No\" ");
@@ -28,6 +52,7 @@ public class Main {
 			
 		}
 	}
+
 	public static void Present()
 	{
 		System.out.println("*************************");
@@ -35,6 +60,7 @@ public class Main {
 		//System.out.println("Saved Device ID: " +User.getId());
 		System.out.println("*************************");
 	}
+	
 	public static void Verify()
 	{
 		scan = new Scanner(System.in);
@@ -49,20 +75,20 @@ public class Main {
 //		{
 //			System.out.println("Searching ... ");
 //		}
-//		
-		
+//			
 		System.out.println();
 	}
-	public static User Create()
+	
+	public static User createUser()
 	{
-		System.out.println(" CREATE USER");
+		System.out.println(" CREATE USER MODE");
 		System.out.println("******************");
 		scan = new Scanner(System.in);
 		System.out.print("Please enter First name: ");
-		String Fname = scan.next();
+		String fname = scan.next();
 		System.out.println();
 		System.out.print("Please enter Last name: ");
-		String Lname = scan.next();
+		String lname = scan.next();
 		System.out.println();
 		System.out.print("Please enter Device ID: ");
 		//String ID = scan.next();
@@ -73,16 +99,14 @@ public class Main {
 			System.out.print("Would you like to add another device? (Yes/No)");
 			anotherDevice = scan.next(); 
 			if(anotherDevice.equalsIgnoreCase("Yes"))
-	
 				System.out.print("Please enter Device ID: ");
 				//ID = scan.next();
 			//	User.setId(ID);
 		}while (anotherDevice.equalsIgnoreCase("Yes"));
-		User user = new User(Fname,Lname); 
-		return user; 
 		
+		User user = new User(fname, lname); 
+		return user; 
 	}
-	
 	
 
 }

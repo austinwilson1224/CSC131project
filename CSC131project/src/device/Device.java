@@ -1,11 +1,17 @@
 package device;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import notification.Notification;
+
 public class Device {
 	//this is the device driver
 	//most devices should have a name and an id
 	private String name,id;
 	private String location;
 	private boolean lost;
+	private List<Notification> notifications = new ArrayList<>();
 	
 	//default constructor
 	public Device() {
@@ -21,7 +27,6 @@ public class Device {
 		this.location = location;
 		//this.lost = false;
 	}
-	
 	
 	/**
 	 * setter methods
@@ -62,4 +67,30 @@ public class Device {
 	public boolean isLost() {
 		return this.lost;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		 if (this == obj) {
+             return true;
+         }
+         if (obj == null || getClass() != obj.getClass()) {
+             return false;
+         }
+         Device device = (Device) obj;
+ 		 return (id==device.id && name==device.name && name.equals(device.name));
+	}
+
+	public List<Notification> getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(List<Notification> notifications) {
+		this.notifications = notifications;
+	}
+	
+	@Override
+	public String toString() {
+		return "Name: " + this.name + "Id: " + this.id;
+	}
+	
 }

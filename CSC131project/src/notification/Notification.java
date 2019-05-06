@@ -7,15 +7,17 @@ package notification;
 
 public class Notification {
 
-	private String description, id, timeStamp;
+	private String message, id, timeStamp;
 	private String sender, receiver;
-
+	private NotificationType type;
+	private boolean read=false;
+	
 	public String getDescription() {
-		return description;
+		return message;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.message = description;
 	}
 
 	public String getId() {
@@ -50,4 +52,25 @@ public class Notification {
 		this.receiver = receiver;
 	}
 
+	public NotificationType getType() {
+		return type;
+	}
+
+	public void setType(NotificationType type) {
+		this.type = type;
+	}
+
+	public boolean isRead() {
+		return read;
+	}
+
+	public void setRead(boolean read) {
+		this.read = read;
+	}
+
+	@Override
+	public String toString() {
+		return "\nMessage: " + this.message + "\nSender: " + this.sender + "\nReceiver: " + this.receiver + "\nTimeStamp: " +this.timeStamp;
+	}
+	
 }
