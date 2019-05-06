@@ -5,6 +5,10 @@ import java.util.Set;
 
 import device.Device;
 
+/*
+* author CJ Angelina Torres
+*/
+
 public class ServerService {
 	//Composite Patterns (HAS-A relationship)
 	private static Set<Device> deviceList = new HashSet<>();
