@@ -3,7 +3,6 @@ package device;
 import java.util.ArrayList;
 import java.util.List;
 import notification.Notification;
-import java.lang.*;
 
 public class Device {
 	//this is the device driver

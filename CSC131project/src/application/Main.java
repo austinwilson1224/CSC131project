@@ -34,13 +34,13 @@ public class Main {
 	    	break;
 	    case 3:
 	    	//return device 
-	    	lostDevice();
+	    	//lostDevice();
 	    	break;
 	    case 4: 
-	    	foundDevice();
+	    	//foundDevice();
 	    	break;
 	    case 5:
-	    	blockDevice();
+	    	//blockDevice();
 	    	break;
 	    case 0:
 	    	break;
