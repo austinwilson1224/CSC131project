@@ -2,29 +2,30 @@ package device;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import notification.Notification;
 
 public class Device {
 	//this is the device driver
 	//most devices should have a name and an id
-	private String name,id;
+	private String name;
 	private String location;
 	private boolean lost;
 	private List<Notification> notifications = new ArrayList<>();
-	//this is a list to store the id numbers of all devices in existence 
-	private ArrayList<Integer> existingIds = new ArrayList<Integer>();
 	
 	//default constructor
 	public Device() {
 		this.name = "";
-		this.id = "";
 		this.lost = false;
+	}
+	
+	public Device(String name) {
+		this.name = name;
 	}
 	
 	// param constructor
 	public Device(String name, String id,String location) {
 		this.name = name;
-		this.id = id;
 		this.location = location;
 		//this.lost = false;
 	}
@@ -35,9 +36,6 @@ public class Device {
 	 */
 	public void setName(String name) {
 		this.name = name;
-	}
-	public void setid(String id) {
-		this.id = id;
 	}
 	public void setLocation(String location) {
 		this.location = location;
@@ -59,9 +57,7 @@ public class Device {
 	public String getName() {
 		return this.name;
 	}
-	public String getid() {
-		return this.id;
-	}
+	
 	public String getLocation() {
 		return this.location;
 	}
@@ -78,7 +74,7 @@ public class Device {
              return false;
          }
          Device device = (Device) obj;
- 		 return (id==device.id && name==device.name && name.equals(device.name));
+ 		 return (name==device.name && name.equals(device.name));
 	}
 
 	public List<Notification> getNotifications() {
@@ -91,7 +87,7 @@ public class Device {
 	
 	@Override
 	public String toString() {
-		return "Name: " + this.name + "Id: " + this.id;
+		return "Name: " + this.name;
 	}
 	
 }

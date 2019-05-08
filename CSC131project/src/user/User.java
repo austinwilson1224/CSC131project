@@ -17,9 +17,10 @@ public class User {
 	private String id;
 	private List<Device> devices= new ArrayList<Device>(); 
 	
-	public User(String fname, String lname) {
+	public User(String fname, String lname, String id) {
 		this.fname = fname;
 		this.lname = lname; 
+		this.id = id;
 	}
 	
 	public String getFname() {
@@ -58,4 +59,9 @@ public class User {
 		this.devices.add(device);
 	}
 
+	@Override
+	public String toString() {
+		return "FName: "+ this.fname +" LName: "+  this.lname +" Id: "+this.id;
+	}
+	
 }

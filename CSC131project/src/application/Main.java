@@ -1,7 +1,9 @@
 package application;
+import java.util.Random;
 import java.util.Scanner;
 
 import device.Device;
+import server.ServerService;
 import user.User;
 
 public class Main {
@@ -16,8 +18,10 @@ public class Main {
 	{
 		int choice;
 		do {
-		System.out.println("1. Create User\t2.Add Device\t3.Lost Device\t4.Found Device\t5.Block Device\t0.Exit");
-		System.out.print("Enter your choice\t");
+		System.out.println("-------------------\nMAIN MENU\n");
+		System.out.println("1. Create User\n2.Add Device\n3.Lost Device\n4.Found Device\n5.ListUsers\n6.List Devices\n7.List Lost Devices\n0.Exit");
+		System.out.println("-------------------\n");
+		System.out.print("Enter your choice: ");
 		choice = scan.nextInt();
 	    switch(choice) {
 	    case 1:
@@ -29,13 +33,19 @@ public class Main {
 	    	createDevice();
 	    	break;
 	    case 3:
-	    	
+	    	lostDevice();
 	    	break;
 	    case 4: 
 	    	findDevice();
 	    	break;
 	    case 5:
-	    	blockDevice();
+	    	listUsers();
+	    	break;
+	    case 6:
+	    	listDevices();
+	    	break;
+	    case 7:
+	    	listLostDevices();
 	    	break;
 	    case 0:
 	    	break;
@@ -47,14 +57,21 @@ public class Main {
 		System.out.println("Exiting application.");
 	}
 	
-	public static void isLost()
-	{
-		System.out.println("Have you lost your device? \n Reply with \"Yes\" or \"No\" ");
-		answer = scan.next();
-		if(answer.equalsIgnoreCase("Yes"))
-		{
-			
-		}
+	private static void listLostDevices() {
+		System.out.println(ServerService.getLostDeviceList());
+		
+	}
+
+	private static void lostDevice() {
+		System.out.println("LOST DEVICE MODE");
+		System.out.print("Enter Device Name: ");
+		String deviceName = new Scanner(System.in).nextLine();
+		Device currentDevice = ServerService.getDevice(deviceName);
+		ServerService.addLostDevice(currentDevice);
+	}
+
+	private static void listUsers() {
+		System.out.println(ServerService.getUserList());
 	}
 
 	public static void Present()
@@ -87,51 +104,42 @@ public class Main {
 	{
 		System.out.println(" CREATE USER MODE");
 		System.out.println("******************");
-		scan = new Scanner(System.in);
 		System.out.print("Please enter First name: ");
 		String fname = scan.next();
 		System.out.println();
 		System.out.print("Please enter Last name: ");
 		String lname = scan.next();
 		System.out.println();
-		System.out.print("Please enter Device ID: ");
-		//String ID = scan.next();
-		//User.setId(ID);
-		System.out.println();
-		do
-		{
-			System.out.print("Would you like to add another device? (Yes/No)");
-			anotherDevice = scan.next(); 
-			if(anotherDevice.equalsIgnoreCase("Yes"))
-				System.out.print("Please enter Device ID: ");
-				//ID = scan.next();
-			//	User.setId(ID);
-		}while (anotherDevice.equalsIgnoreCase("Yes"));
-		
-		User user = new User(fname, lname); 
+		String id = String.valueOf(Math.abs(new Random().nextInt()));
+		User user = new User(fname, lname, id); 
+		ServerService.addUser(user);
 		return user; 
 	}
-	public static Device createDevice() {
-		System.out.print("What is your name?");
-		String name = scan.next();
-		System.out.print("What is your ID?");
-		String ID = scan.next();
-		System.out.print("What is your location?");
-		String location = scan.next();
-		Device d = new Device(name,ID,location);
-		return d;
-
-	}
-	public static String findDevice() {
-		//get the users name
-		//search the list of devices
-		//return the location string
-		return "";
+	
+	//creat device is case 2
+	public static void createDevice() {
+		System.out.print("Please enter Device Name: ");
+		String deviceName = new Scanner(System.in).nextLine();
+		String id = String.valueOf(Math.abs(new Random().nextInt()));
+		Device currentDevice = new Device(deviceName);
+		ServerService.addDevice(currentDevice);
 	}
 	
-	public static void blockDevice() {
-		//this should set the status of the device to critical and block it 
+	public static void listDevices() {
+		System.out.println(ServerService.getDeviceList());
 	}
+	
+	
+	public static void findDevice() {
+		System.out.print("Please enter Device Name: ");
+		String deviceName = new Scanner(System.in).nextLine();
+		String id = String.valueOf(Math.abs(new Random().nextInt()));
+		Device currentDevice = new Device(deviceName);
+		ServerService.addFoundDevice(currentDevice);
+
+	}
+	
+
 	
 
 }
