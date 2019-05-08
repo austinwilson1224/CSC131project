@@ -26,12 +26,10 @@ public class Main {
 	    	break;
 	    case 2:
 	    	//create new device
-	    	Device device = new Device();
-	    	System.out.print("What is your name?");
-	    	String name = scan.next(); 
+	    	createDevice();
 	    	break;
 	    case 3:
-	    	createDevice();
+	    	
 	    	break;
 	    case 4: 
 	    	findDevice();
