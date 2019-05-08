@@ -21,26 +21,23 @@ public class Main {
 		choice = scan.nextInt();
 	    switch(choice) {
 	    case 1:
+	    	//create new user...
 	    	createUser();
 	    	break;
 	    case 2:
+	    	//create new device
 	    	Device device = new Device();
 	    	System.out.print("What is your name?");
-	    	String name = scan.next();
-	    	//get id
-	    	
-	    	//get location
-	    	//addDevice();
+	    	String name = scan.next(); 
 	    	break;
 	    case 3:
-	    	//return device 
-	    	//lostDevice();
+	    	createDevice();
 	    	break;
 	    case 4: 
-	    	//foundDevice();
+	    	findDevice();
 	    	break;
 	    case 5:
-	    	//blockDevice();
+	    	blockDevice();
 	    	break;
 	    case 0:
 	    	break;
@@ -115,6 +112,27 @@ public class Main {
 		
 		User user = new User(fname, lname); 
 		return user; 
+	}
+	public static Device createDevice() {
+		System.out.print("What is your name?");
+		String name = scan.next();
+		System.out.print("What is your ID?");
+		String ID = scan.next();
+		System.out.print("What is your location?");
+		String location = scan.next();
+		Device d = new Device(name,ID,location);
+		return d;
+
+	}
+	public static String findDevice() {
+		//get the users name
+		//search the list of devices
+		//return the location string
+		return "";
+	}
+	
+	public static void blockDevice() {
+		//this should set the status of the device to critical and block it 
 	}
 	
 
